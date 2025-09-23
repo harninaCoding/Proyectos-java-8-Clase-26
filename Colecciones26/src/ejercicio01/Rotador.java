@@ -1,7 +1,7 @@
 package ejercicio01;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface Rotador<T> {
-	public void rotar(Collection<T> collection);
+	public void rotar(List<T> collection);
 }
