@@ -6,7 +6,11 @@ public class PruebaReferencialMethodsObjects10 {
     public static void main(String[] args) {
         Something something = new Something();
         //pasando por referencia u nmetodo de objeto
+        
         Converter<String, String>  converter = something::startsWith;
+        converter=s->{
+        	return something.startsWith(s);
+        };
         String converted = converter.convert("Java");
         System.out.println(converted);    // "J"
         //Usando metodos de construccion
