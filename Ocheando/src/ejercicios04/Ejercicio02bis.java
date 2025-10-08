@@ -8,8 +8,6 @@ import java.util.stream.Collectors;
 public class Ejercicio02bis {
 	ArrayList<Vehiculo> vehiculos = new ArrayList<>();
 
-	
-
 	// Duplica los kilometros mapeando
 	public Ejercicio02bis() {
 		super();
@@ -21,11 +19,15 @@ public class Ejercicio02bis {
 		vehiculos.add(new Vehiculo("6666FFF", Modelo.OPEL, 300000));
 		vehiculos.add(new Vehiculo("7777GGG", Modelo.CITROEN, 0));
 		//
-		
+
 	}
 
 	public List<Vehiculo> alteraCollecion() {
-		return vehiculos;
-		//TODO
+		return vehiculos.stream()
+				.map(t -> 
+				//para poder retorna una lista diferente y con elementos diferentes
+				//tengo que crearlos porque si no las dos lista comparten elementos
+					new Vehiculo(t.getMatricula(),t.getModelo(),t.getKilometros()*2))
+				.collect(Collectors.toList());
 	}
 }

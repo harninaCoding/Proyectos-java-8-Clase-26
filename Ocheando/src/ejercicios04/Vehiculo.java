@@ -12,7 +12,11 @@ public class Vehiculo {
 	        this.kilometros = kilometros;
 	    }
 	 
-	    public String getMatricula() {
+	    public Vehiculo(Vehiculo t) {
+			this(t.matricula,t.modelo,t.kilometros);
+		}
+
+		public String getMatricula() {
 	        return matricula;
 	    }
 	 

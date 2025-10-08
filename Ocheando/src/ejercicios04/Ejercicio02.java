@@ -1,7 +1,9 @@
 package ejercicios04;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Ejercicio02 {
 	/*
@@ -17,9 +19,7 @@ public class Ejercicio02 {
 		return lista;
 	}
 	public List<String> omitirRepetidosStream(List<String> lista) {
-		
-		//TODO
-		return lista;
+		return lista.stream().distinct().collect(Collectors.toList());
 	}
 
 	private LinkedList<String> getListQQ() {
@@ -30,4 +30,8 @@ public class Ejercicio02 {
 		}
 		return al;
 	}
+	private List<String> getListQQNose() {
+		String[] strs = { "12345", "67891", "12347809933", "98765432102", "67891", "12347809933" };
+		return Arrays.asList(strs);
+		}
 }

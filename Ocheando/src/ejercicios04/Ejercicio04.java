@@ -18,6 +18,13 @@ public class Ejercicio04 {
 	 * 
 	 */
 
+	public void recorrerMapa(Map<Integer, String> mapa) {
+		mapa.entrySet().stream().forEach(entry->{
+			System.out.println(entry.getKey());
+			System.out.println(entry.getValue());
+		});
+	}
+	
 	public Map<Integer, String> getMap() {
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		map.put(1, " ");
