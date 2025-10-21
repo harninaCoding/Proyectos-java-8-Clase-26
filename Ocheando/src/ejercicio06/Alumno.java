@@ -20,12 +20,21 @@ public class Alumno {
 		});
 	}
 
-	String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
+	public boolean isAprobado() {
+		return boletin.entrySet().stream()
+				.filter(entry->entry.getValue()<5)
+				.count()<2;
+	}
 	private HashMap<Materia, Integer> getBoletin() {
 		return boletin;
+	}
+	public List<Materia> getMateriasSuspensas(){
+		//TODO
+		return null;
 	}
 	
 }
