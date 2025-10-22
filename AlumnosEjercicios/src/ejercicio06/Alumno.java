@@ -1,10 +1,13 @@
 package ejercicio06;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Alumno {
+import modelo.accesores.Keyable;
+
+public class Alumno implements Keyable<String>,Serializable {
 	private HashMap<Materia, Integer> boletin;
 	private String nombre;
 	
@@ -45,5 +48,10 @@ public class Alumno {
 	}
 	public boolean isEqualsNombre(String nombre) {
 		return getNombre().equals(nombre);
+	}
+
+	@Override
+	public String getKey() {
+		return nombre;
 	}
 }

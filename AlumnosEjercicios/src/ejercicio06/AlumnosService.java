@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 public class AlumnosService {
 	private AlumnosRepository alumnosRepository;
 
-	public AlumnosService() {
+	public AlumnosService(AlumnosRepository alumnosRepository) {
 		super();
-		this.alumnosRepository = new AlumnosRepository();
+		this.alumnosRepository = alumnosRepository;
 	}
 
 	public List<AlumnoResponse> getNombreAlumnosAprobadosYMateriasSuspensas() {
