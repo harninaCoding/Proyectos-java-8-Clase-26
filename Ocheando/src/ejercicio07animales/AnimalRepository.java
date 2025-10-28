@@ -29,13 +29,11 @@ public class AnimalRepository {
 		
 	}
 	public Map<String, Long> getCantidadAnimalesByEspecieRecycled() {
-		Map<String, List<Animal>> animalesByEspecie = getAnimalesByEspecie();
-		Set<Entry<String, List<Animal>>> entrySet = animalesByEspecie.entrySet();
-		Map<String, Long> collect = entrySet.stream()
-				.collect(Collectors.groupingBy(
-						es->es.getKey()
-						,Collectors.counting()));
-		return collect;
+		return getAnimalesByEspecie().entrySet().stream()
+				.collect(Collectors.toMap(
+						Map.Entry::getKey, 
+						entry->(long)entry.getValue().size()
+						));
 	}
 	
 	public Map<Boolean,List<Animal>> getCantidadAnimalesByDieta(){
