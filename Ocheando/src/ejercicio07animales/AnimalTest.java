@@ -33,11 +33,7 @@ class AnimalTest {
 	@Test
 	void test03(){
 		Map<String, Long> cantidadAnimalesByEspecie = animalRepository.getCantidadAnimalesByEspecie();
-		List<Entry<String, Long>> collect = cantidadAnimalesByEspecie.entrySet().stream().filter(es->es.getValue()>1).collect(Collectors.toList());
 		Map<String, Long> cantidadAnimalesByEspecieRecycled = animalRepository.getCantidadAnimalesByEspecieRecycled();
-		assertEquals(cantidadAnimalesByEspecie.keySet()
-				,cantidadAnimalesByEspecieRecycled.keySet());
-		assertEquals(cantidadAnimalesByEspecie.values()
-				,cantidadAnimalesByEspecieRecycled.values());
+		assertEquals(cantidadAnimalesByEspecie,cantidadAnimalesByEspecieRecycled);
 	}
 }
