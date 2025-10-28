@@ -1,4 +1,4 @@
-package ejercicio07;
+package ejercicio07animales;
 
 import java.time.LocalDate;
 
@@ -29,5 +29,9 @@ public class Animal {
 
     public boolean isCarnivoro() {
         return esCarnivoro;
+    }
+    
+    public int getDecade() {
+    		return (this.getFechaNacimiento().getYear()-1)/10*10;
     }
 }
