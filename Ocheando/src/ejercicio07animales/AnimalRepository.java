@@ -28,12 +28,20 @@ public class AnimalRepository {
 							,Collectors.counting()));
 		
 	}
+	//KK
 	public Map<String, Long> getCantidadAnimalesByEspecieRecycled() {
 		return getAnimalesByEspecie().entrySet().stream()
 				.collect(Collectors.toMap(
 						Map.Entry::getKey, 
 						entry->(long)entry.getValue().size()
 						));
+	}
+	
+	public Map<String,Double> getSumaPesoPorEspecie(){
+			return animales.stream()
+					.collect(
+							Collectors.groupingBy(Animal::getEspecie,
+							Collectors.summingDouble(Animal::getPeso)));
 	}
 	
 	public Map<Boolean,List<Animal>> getCantidadAnimalesByDieta(){
